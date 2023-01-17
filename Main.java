@@ -931,9 +931,14 @@ public static int[] fired(Random rand, int[] jobChoices){
 							System.out.println("Job: " + job);
 						}
 					} else if (choice == 2) {
-						jobChoices = returnv.jobFinder(scan, rand, jobList, jobHours, jobPay, jobId, jobHappinessMod, jobHealthMod);
-						job = jobList.get(jobChoices[2]);
-						//System.out.println(job);
+						if (jobChoices[2] != -1){
+							System.out.println("You already have a job.");
+						}
+						else{
+							jobChoices = returnv.jobFinder(scan, rand, jobList, jobHours, jobPay, jobId, jobHappinessMod, jobHealthMod);
+							job = jobList.get(jobChoices[2]);
+							//System.out.println(job);
+						}
 					} else if (choice == 3) {
 						if (jobChoices[2] == -1){
 							System.out.println("You don't have a job.");
